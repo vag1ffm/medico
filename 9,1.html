@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="slyle.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body  style="display: flex; flex-direction: column; align-items: center;">
+	<div class="phone-number">
+		<div class="back">
+			<a href="8.html">
+				<i class="fa-solid fa-angle-left"></i>
+			</a>
+		</div>
+		To Phone Number
+		<br>
+		<hr class="line9">
+	</div>
+	<div class="choose-a-method9">
+		Choose an Operator
+	</div>
+	<div class="list-of-operators">
+		<div class="operator ">
+			<div class="i">
+				<img src="img/azersel.jpg" alt="">
+			</div>
+			<div class="text">
+				Azercell
+			</div>
+		</div>		
+		<div class="operator">
+			<div class="i">
+				<img src="img/nar.png" alt="">
+			</div>
+			<div class="text">
+				Nar
+			</div>
+		</div>
+		<div class="operator">
+			<div class="i">
+				<img src="img/bakcell.png" alt="">
+			</div>
+			<div class="text">
+				Bakcell
+			</div>
+		</div>
+	</div>
+
+	
+
+	<div class="inputs9" style="display: none;">
+		<input type="phone" placeholder="Phone Number">
+		<img src="img/smartphone.svg">
+	</div>
+
+
+	<div class="minimum" style="display: none;">
+		<p>Minimum Amount 10 AZN</p>
+	</div>
+
+
+	<div class="input-chena"  style="display: none;">
+		<input id="lala" type="number">
+		<label for="lala">AZN</label>
+	</div>
+
+
+	<button style="display: none;" class="container1">Continue</button>
+	<button style="display: none;" class="container2">Continue</button>
+	<button style="display: none;" class="container3">Continue</button>
+		
+
+	<div class="available-balance">
+		Available Balance
+	</div>
+
+	<div class="avalible-price">
+		<span>20</span>
+		<span>AZN</span>
+	</div>
+
+	<script>
+		let items = document.querySelectorAll('.operator')
+		let itputs9 = document.querySelector('.inputs9')
+		let inputPrise = document.querySelector('.input-chena')
+		let button = document.querySelector('.container1')
+		let button2 = document.querySelector('.container2')
+		let word = document.querySelector('.choose-a-method9')
+		let minimum = document.querySelector('.minimum')
+
+		items.forEach(item =>{
+			item.addEventListener('click', () => {
+				console.log(999)
+				for (let i of items) {			
+					i.style.display = 'none'
+					item.style.display = 'flex'
+					item.style.marginTop = '15px'
+					item.classList.add('activ-operator')
+				}
+				button.style.display = 'block'
+				itputs9.style.display = 'block'
+				itputs9.style.marginTop = '53px'
+				word.innerText = 'Choose Payment Amount'
+
+			
+			})
+		})
+
+		button.addEventListener('click', () => {
+			let wordlen = document.querySelector('.inputs9 input').value.length
+			if (wordlen===13) {
+				// alert(999)
+				button2.style.display = 'flex'
+				button.style.display = 'none'
+				itputs9.style.marginTop = '15px'
+				document.querySelector('.inputs9 input').setAttribute('disabled', 'disabled' )
+				inputPrise.style.display = 'block'
+				minimum.style.display = 'block'
+				inputPrise.style.marginTop = '20px'
+				inputPrise.style.marginBottom = '20px'
+				word.innerText = 'Choose Payment Amount'
+			
+			}
+			
+		})
+
+		button2.addEventListener('click', () => {
+			let priseYouHave = document.querySelector('.avalible-price span:first-child')
+			let priseYouWrite = document.querySelector('#lala')
+		
+
+			if (+priseYouHave.innerText >= +priseYouWrite.value) {
+				button.style.display = 'none'
+				priseYouHave.innerText = +priseYouHave.innerText - (+priseYouWrite.value)
+				button2.style.display = 'flex'
+				word.innerText = 'Payment Details'
+				word.innerText = 'Payment Details'
+				minimum.style.display = 'none'
+
+			}
+		})
+	</script>
+	
+	
+	<script src="https://kit.fontawesome.com/3cb2bc27fe.js" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="slyle.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body  style="display: flex; flex-direction: column; align-items: center;">
+	<div class="phone-number">
+		<div class="back">
+			<a href="8.html">
+				<i class="fa-solid fa-angle-left"></i>
+			</a>
+		</div>
+		To Bank Card
+		<br>
+		<hr class="line9">
+	</div>
+	<div class="write-you">
+		Write your Number
+	</div>
+	<div class="variant" >
+			<p style="font-size: 14px;margin-right:15px ; white-space: nowrap;">8888 8888 8888 8888</p>
+			<p style="font-size: 13px; white-space: nowrap; overflow: hidden;">Amirka mandarinka</p>
+		</div>
+		<div class="variant">
+			<p style="font-size: 14px;margin-right:15px; white-space: nowrap;">9999 9999 9999 9999</p>
+			<p style="font-size: 13px; white-space: nowrap;">Vaga Mamedov</p>
+		</div>
+		<a href="11,1.html">
+			<div class="variant" style="display: flex; justify-content: center;">
+				<p style="font-size: 14px; display: flex;">To a Custom Card</p>
+			</div> 
+		</a> 
+
+
+	<div class="minimum" style="display: none;">
+		<p>Minimum Amount 10 AZN</p>
+	</div>
+	
+
+
+	<div class="input-chena"  style="display: none;">
+		<input id="lala" type="number">
+		<label for="lala">AZN</label>
+	</div>
+
+	
+	<button style="display: none;" class="container1">Continue</button>
+
+	<a href="6,1.html">
+		<button style="display: none;" class="container2">Back to Home</button>
+	</a>
+	
+
+
+
+	<div class="available-balance" style="margin-top: 210px;">
+		Available Balance
+	</div>
+
+	<div class="avalible-price">
+		<span>20</span>
+		<span>AZN</span>
+	</div>
+	<script>
+		let items = document.querySelectorAll('.variant')
+		let inputPrise = document.querySelector('.input-chena')
+		let button = document.querySelector('.container1')
+		let button2 = document.querySelector('.container2')
+		let word = document.querySelector('.write-you')
+
+
+
+
+
+		items.forEach(item =>{
+			item.addEventListener('click', () => {
+				for (let i of items) {
+					i.style.display = 'none'
+					item.style.display = 'flex'
+					item.style.backgroundColor = '#06c167'
+				}
+				inputPrise.style.display = 'block'
+				button.style.display = 'block'
+				word.innerText = 'Choose an Amount'
+				console.log(word)
+			})
+		})
+
+		button.addEventListener('click', () => {
+			let priseYouHave = document.querySelector('.avalible-price span:first-child')
+			let priseYouWrite = document.querySelector('#lala')
+			console.log(priseYouWrite.value)
+			console.log(priseYouHave.innerText)
+			if (+priseYouHave.innerText >= +priseYouWrite.value) {
+				button.style.display = 'none'
+				priseYouHave.innerText = +priseYouHave.innerText - (+priseYouWrite.value)
+				button2.style.display = 'flex'
+				word.innerText = 'Payment Details'
+				
+			}
+			
+		})
+	</script>
+	
+	
+	<script src="https://kit.fontawesome.com/3cb2bc27fe.js" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>

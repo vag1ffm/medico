@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="slyle.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body  style="display: flex; flex-direction: column; align-items: center;">
+	<div class="phone-number">
+		<div class="back">
+			<a href="8.html">
+				<i class="fa-solid fa-angle-left"></i>
+			</a>
+		</div>
+		To Bank Card
+		<br>
+		<hr class="line9">
+	</div>
+	<div class="write-you">
+		Enter the cart Number
+	</div>
+	
+		<div class="variant" style="display: flex; justify-content: center; background-color: #06c167;">
+			<p style="font-size: 14px; display: flex;">To a Custom Card</p>
+		</div>
+
+		
+		<div class="inputs11">
+			<input type="number" placeholder="Card Number">
+			<img src="img/credit-card.svg">
+		</div>
+		
+
+
+	<div class="minimum" style="display: none;">
+		<p>Minimum Amount 10 AZN</p>
+	</div>
+	
+	<div class="input-chena"  style="display: none;">
+		<input id="lala" type="number">
+		<label for="lala">AZN</label>
+	</div>
+
+	<button class="container1" style="margin-top: 18px;" >Continue</button>
+		
+	
+
+
+
+	
+
+
+
+	
+	<button style="display: none;" class="container2">Back to Home</button>
+
+
+
+
+
+	<div class="available-balance" style="margin-top: 210px;">
+		Available Balance
+	</div>
+
+	<div class="avalible-price">
+		<span>20</span>
+		<span>AZN</span>
+	</div>
+	<script>
+		let items = document.querySelectorAll('.variant')
+		let inputPrise = document.querySelector('.input-chena')
+		let button = document.querySelector('.container1')
+		let button2 = document.querySelector('.container2')
+		let word = document.querySelector('.write-you')
+		let note = document.querySelector('.minimum')
+		let inputs11 = document.querySelector('.inputs11')
+		let available = document.querySelector('.available-balance')
+
+
+		button.addEventListener('click', () => {
+			let cardlen = document.querySelector('.inputs11 input').value
+			if (cardlen.length === 16) {
+				button.style.display = 'none'
+				note.style.display = 'block'
+				inputs11.style.marginTop = '36px'
+				button2.style.display = 'block'
+				inputPrise.style.display = 'block'
+				available.style.marginTop = '38px'
+				word.innerText = 'Choose an Amount'
+			}
+
+			
+		})
+
+		button2.addEventListener('click', ()=> {
+			word.innerText = 'Payment Details'
+		})
+
+	</script>
+	
+	
+	<script src="https://kit.fontawesome.com/3cb2bc27fe.js" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>

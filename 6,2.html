@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="slyle.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<div class="add-recipt">
+		<div class="back">
+			<a href="6,1.html">
+				<i class="fa-solid fa-angle-down"></i>
+			</a>
+		</div>
+		Add a Recipt
+		<br>
+		<hr class="line6">
+	</div>
+	<div class="choose-a-method">
+		Choose a Method
+	</div>
+	<div class="metods">
+		<div class="metod">
+			<div class="i">
+				<img src="img/camera.svg" alt="">
+			</div>
+			<div class="text">
+				Scan QR Code
+			</div>
+		</div>
+		<div class="metod">
+			<div class="i">
+				<img src="img/edit.svg" alt="">
+			</div>
+			<div class="text">
+				Enter Fiscal ID
+			</div>
+		</div>
+
+		
+	</div>
+	
+	<div class="input62" >
+		<input type="text" placeholder="Ex: Jvnjsdddddds">
+		<img src="img/edit-2.svg" alt="">
+		<button>Add</button>
+	</div>
+
+	<div class="row">
+	  <div class="col">
+	    <div id="reader"></div>
+	  </div>
+	  <br>
+	  <div class="col" style="padding:30px;">
+	    <h4>SCAN RESULT</h4>
+	    <div id="result">Result Here</div>
+	  </div>
+	</div>
+
+
+	<script src="html5-qrcode.min.js"></script>
+	<script type="text/javascript">
+		function onScanSuccess(qrCodeMessage) {
+		    document.getElementById('result').innerHTML = '<span class="result">'+qrCodeMessage+'</span>';
+		}
+		function onScanError(errorMessage) {
+			
+		}
+		var html5QrcodeScanner = new Html5QrcodeScanner(
+		    "reader", { fps: 10, qrbox: 250 });
+			html5QrcodeScanner.render(onScanSuccess, onScanError);
+	</script> 
+	<script src="https://kit.fontawesome.com/3cb2bc27fe.js" crossorigin="anonymous"></script>
+	<script>
+		let code = document.querySelector('.metod:last-child')
+		let inputForCode = document.querySelector('.input62')
+
+		code.addEventListener('click', ()=> {
+			inputForCode.classList.toggle('display-block')
+			swichCamera.classList.remove('display-block')
+
+		})
+
+
+		let camera = document.querySelector('.metod:first-child')
+		let swichCamera = document.querySelector('.row')
+
+		camera.addEventListener('click', ()=> {
+			swichCamera.classList.toggle('display-block')
+			inputForCode.classList.remove('display-block')
+
+		})
+
+		
+	</script>
+
+</body>
+</html>
